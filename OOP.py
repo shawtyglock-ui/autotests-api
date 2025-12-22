@@ -1,20 +1,20 @@
-class BasePage:
-    def __init__(self, base_url):
-        self.base_url = base_url
+class Product():
+    def __init__(self, name, price):
+        self.name = name
+        self.price = int(price)
+    def show_info(self):
+        print(f'{self.name}, {self.price}')
 
-    def open(self):
-        print(f'Открываю {self.base_url}')
+    def apply_discount(self, percent):
+        discount = self.price * (percent / 100)
+        self.price = self.price - discount
 
+price1 = Product('Хлеб', 100)
+price2 = Product('Молоко', 150)
+price3 = Product('Колбаса', 200)
 
-class LoginPage(BasePage):
-    def login(self, username, password):
-        print(f'Логинимся под {username}')
-
-class HomePage(LoginPage):
-    def logout(self):
-        print(f'Выходим из системы')
-
-home = HomePage("testik.com")
-home.login('Иван', 'Губерниев')
-home.open()
-home.logout()
+price1.apply_discount(10)
+price3.apply_discount(20)
+price1.show_info()
+price2.show_info()
+price3.show_info()

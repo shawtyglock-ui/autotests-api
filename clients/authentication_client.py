@@ -4,17 +4,33 @@ from typing import TypedDict
 
 
 class LoginRequestDict(TypedDict):
+    """
+    Описание структуры запроса на аутентификацию.
+    """
     email: str
     password: str
 
 
 class RefreshRequestDict(TypedDict):
     refreshToken: str
+    """
+        Описание структуры запроса для обновления токена.
+        """
 
 
 class AuthenticationClient(APIClient):
+    """
+       Клиент для работы с /api/v1/authentication
+       """
+
     def login_api(self, request: dict) -> Response:
         return self.post("/api/v1/authentication/login", json=request)
 
     def refresh_api(self, request) -> Response:
+        """
+               Метод выполняет аутентификацию пользователя.
+
+               :param request: Словарь с email и password.
+               :return: Ответ от сервера в виде объекта httpx.Response
+               """
         return self.post("/api/v1/authentication/refresh", json=request)
