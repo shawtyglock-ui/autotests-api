@@ -1,5 +1,7 @@
 from pydantic import BaseModel, HttpUrl, Field, ConfigDict
 
+from tools.fakers import fake
+
 
 class FileSchema(BaseModel):
     """
@@ -12,12 +14,13 @@ class FileSchema(BaseModel):
 
 
 class CreateFileRequestSchema(BaseModel):
-    model_config = ConfigDict(populate_by_name=True)
     """
     Описание структуры запроса на создание файла.
     """
-    file_name: str = Field(alias="filename")
-    directory: str
+    # Добавили генерацию случайного названия файла с расширением PNG
+    filename: str = Field(default_factory=lambda: f"{fake.uuid4()}.png")
+    # Директорию оставляем статичной, чтобы все тестовые файлы на сервере попадали в одну папку
+    directory: str = Field(default="tests")
     upload_file: str
 
 
