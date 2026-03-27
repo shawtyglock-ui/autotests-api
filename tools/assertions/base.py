@@ -31,6 +31,14 @@ def assert_equal(actual: Any, expected: Any, name: str):
         f'Actual value: {actual}'
     )
 
+def assert_length(actual: list, expected: list, name: str):
+    assert len(actual) == len(expected), (
+        f'Incorrect length of "{name}". '
+        f'Expected length: {len(expected)}. '
+        f'Actual length: {len(actual)}'
+    )
+
+
 # Остальной код без изменений
 
 def assert_is_true(actual: Any, name: str):
