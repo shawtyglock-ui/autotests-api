@@ -1,0 +1,10 @@
+[32mINFO    [0m HTTP_CLIENT:event_hook.py:28 Make POST request to http://localhost:8000/api/v1/users
+[32mINFO    [0m HTTP_CLIENT:event_hook.py:38 Got response 200 OK from http://localhost:8000/api/v1/users
+[32mINFO    [0m HTTP_CLIENT:event_hook.py:28 Make POST request to http://localhost:8000/api/v1/authentication/login
+[32mINFO    [0m HTTP_CLIENT:event_hook.py:38 Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+[32mINFO    [0m HTTP_CLIENT:event_hook.py:28 Make POST request to http://localhost:8000/api/v1/files
+[32mINFO    [0m HTTP_CLIENT:event_hook.py:38 Got response 200 OK from http://localhost:8000/api/v1/files
+[32mINFO    [0m HTTP_CLIENT:event_hook.py:28 Make POST request to http://localhost:8000/api/v1/courses
+[32mINFO    [0m HTTP_CLIENT:event_hook.py:38 Got response 200 OK from http://localhost:8000/api/v1/courses
+[32mINFO    [0m HTTP_CLIENT:event_hook.py:28 Make GET request to http://localhost:8000/api/v1/courses?userId=9d8313da-72a6-4a00-a2ce-c9cf46dea800
+[32mINFO    [0m HTTP_CLIENT:event_hook.py:38 Got response 200 OK from http://localhost:8000/api/v1/courses?userId=9d8313da-72a6-4a00-a2ce-c9cf46dea800

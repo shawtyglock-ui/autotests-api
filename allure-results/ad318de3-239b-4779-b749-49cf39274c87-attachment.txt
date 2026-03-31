@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTAzLTMxVDE2OjEwOjI5LjQwNjcyMyIsInVzZXJfaWQiOiI5NzkxOGM2Mi0zNGYwLTRlNTctODk3ZC1kOTA4NzY2MDNmMGMifQ.4jO7czw19DXi2twqmx-XkBjYEoe28t8EkEOuY0I6ucU' \
+  -H 'content-length: 323' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Probably old pattern discussion argue card anyone agent.","maxScore":55,"minScore":5,"description":"Why prove anything forget draw cup game. Support must benefit these ago.","estimatedTime":"10 weeks","previewFileId":"f62807bd-f368-432a-b34d-f0ee40bc0455","createdByUserId":"97918c62-34f0-4e57-897d-d90876603f0c"}'

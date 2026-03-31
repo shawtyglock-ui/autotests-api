@@ -8,6 +8,7 @@ from clients.errors_schema import ValidationErrorResponseSchema, InternalErrorRe
 from clients.files.files_client import FilesClient
 from clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema, GetFileResponseSchema, \
     GetFileRequestSchema
+from config import settings
 from fixtures.files import FileFixture
 from tools.allure.epics import AllureEpic
 from tools.allure.features import AllureFeature
@@ -35,7 +36,7 @@ class TestFiles:
     @allure.severity(Severity.BLOCKER)
     @allure.story(AllureStory.CREATE_ENTITY)
     def test_create_file(self, files_client: FilesClient):
-        request = CreateFileRequestSchema(upload_file="./testdata/files/image.png")
+        request = CreateFileRequestSchema(upload_file=settings.test_data.image_png_file)
         response = files_client.create_file_api(request)
         response_data = CreateFileResponseSchema.model_validate_json(response.text)
 
@@ -87,7 +88,7 @@ class TestFiles:
     def test_create_file_with_empty_directory(self, files_client: FilesClient):
         request = CreateFileRequestSchema(
             directory="",
-            upload_file="./testdata/files/image.png"
+            upload_file=settings.test_data.image_png_file
         )
         response = files_client.create_file_api(request)
         response_data = ValidationErrorResponseSchema.model_validate_json(response.text)

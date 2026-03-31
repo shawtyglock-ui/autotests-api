@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTAzLTMxVDE2OjEwOjMwLjg5NzU3NiIsInVzZXJfaWQiOiJkOWZkODZmYi0wNjJmLTRjMzYtOTFiYi1lZDM1NTFmOWQwMzIifQ.j7a09_zoqMzvkWHYCqMdLIWpwHz4axHMDF27XOhmbWA' \
+  -H 'content-length: 355' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Place address finish sea forward site.","maxScore":78,"minScore":29,"description":"List hospital loss important raise various change. Church yet son anyone girl. Fund believe provide throw stay must major.","estimatedTime":"6 weeks","previewFileId":"c4ab9bb2-8ae8-4bdb-9c9f-3b0269f0dcf6","createdByUserId":"d9fd86fb-062f-4c36-91bb-ed3551f9d032"}'
