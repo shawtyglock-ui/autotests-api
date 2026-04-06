@@ -40,7 +40,9 @@ jobs:
 
       # 4. Шаг для установки зависимостей для тестового сервера
       - name: Install test server dependencies
-        run: pip install -r autotests-api/requirements.txt
+        run: |
+          pip install -r autotests-api/requirements.txt
+          pip install uvicorn
 
       # 5. Шаг для запуска тестового сервера с необходимыми переменными окружения
       - name: Start a test server
