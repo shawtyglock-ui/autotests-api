@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/exercises' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA0LTA2VDIyOjUwOjAyLjg3Mzk5NyIsInVzZXJfaWQiOiIwNjg5NWFmMS0xNjdiLTRkNDAtYTcwNC05YWZhZTVlZDMzNGQifQ.YqbzHroh17nWo1Z_alu9F2DP6twZCQzVXaQknPRKZ8o' \
+  -H 'content-length: 324' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Fund still wall time kind.","courseId":"0b383a89-b202-494b-a218-474872b81cdb","maxScore":73,"minScore":26,"orderIndex":64,"description":"Occur itself end environment fine rule art. Action growth week through.\nPiece myself trial itself soldier. Get heart cut trouble thus itself pretty.","estimatedTime":"6 weeks"}'

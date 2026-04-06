@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA0LTA2VDIyOjUwOjAxLjcxMTU1NCIsInVzZXJfaWQiOiJiNmU1MDc5Ny05ZjAxLTQwNjUtOWVkZS0xZGUzZDhlMTA1YjYifQ.AHfplvXkzaz3GmpS67S12_oZJ6vHlLSp4hKP4K3Ad7Y' \
+  -H 'content-length: 413' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Popular mention blue half eat data.","maxScore":57,"minScore":9,"description":"Seem southern tree myself above play cultural. Team form a word born.\nWithout age air more seven them single. About them team.\nCourt statement both sister Mrs. Red address that bill.","estimatedTime":"6 weeks","previewFileId":"3640e9ed-6bef-41a9-b790-daaabd8bf714","createdByUserId":"b6e50797-9f01-4065-9ede-1de3d8e105b6"}'

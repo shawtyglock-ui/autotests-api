@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/exercises' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA0LTA2VDIyOjUwOjAzLjUyMzA2OSIsInVzZXJfaWQiOiJkNWMzYzA3Mi01YzVlLTQ3ZTQtOTdjZi04MWIwNzQ4YzVjMDMifQ.gumwoMSfWIln0eJp7cbkwid0s-10-94SjIvIdKl1Pgw' \
+  -H 'content-length: 320' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Decision consider rise environmental degree.","courseId":"969d448f-1b6e-4b7a-9509-1fa459478258","maxScore":61,"minScore":23,"orderIndex":57,"description":"Upon respond choose seven quite speech toward might. Both believe operation senior per now. Suggest hold budget audience field.","estimatedTime":"4 weeks"}'

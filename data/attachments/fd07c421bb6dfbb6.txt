@@ -1,0 +1,11 @@
+curl -X 'PATCH' \
+  'http://localhost:8000/api/v1/courses/b2698322-fe45-4dad-9401-fb875ecb5cfe' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA0LTA2VDIyOjUwOjAwLjIzMzg0NyIsInVzZXJfaWQiOiJiOGU3ZTE4ZC1jNWYzLTQzYjItOGVhZC02Zjg2NGNkMmRhNzkifQ._kkskV0Om8q3wodJkRlLJ70PNpThjbLlgiTkntrGJok' \
+  -H 'content-length: 307' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Mother organization fund imagine.","maxScore":70,"minScore":21,"description":"Democrat apply remember set say field. Person about growth road answer.\nWater guess side recently field nice think. Watch organization perhaps quite party. Rather country shake himself push.","estimatedTime":"1 weeks"}'
