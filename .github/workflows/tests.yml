@@ -15,6 +15,14 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest  # Указываем, что тесты будут запускаться на последней версии Ubuntu
 
+    env:
+      APP_HOST: "http://localhost:8000"
+      DATABASE_URL: "sqlite+aiosqlite:///./local.db"
+      JWT_ALGORITHM: "HS256"
+      JWT_SECRET_KEY: "qa-automation-engineer-api-course-secret-key"
+      JWT_ACCESS_TOKEN_EXPIRE: 1800
+      JWT_REFRESH_TOKEN_EXPIRE: 5184000
+
     steps:
       # 1. Шаг, который будет клонировать ваш репозиторий на машину GitHub Actions
       - name: Check out repository
@@ -36,21 +44,10 @@ jobs:
 
       # 5. Шаг для запуска тестового сервера с необходимыми переменными окружения
       - name: Start a test server
-        env:
-          APP_HOST: "http://localhost:8000"  # Устанавливаем адрес хоста сервера
-          DATABASE_URL: "sqlite+aiosqlite:///./local.db" # Устанавливаем URL локальной базы данных
-          JWT_ALGORITHM: "HS256" # Алгоритм для JWT токенов
-          JWT_SECRET_KEY: "qa-automation-engineer-api-course-secret-key" # Секретный ключ для JWT
-          JWT_ACCESS_TOKEN_EXPIRE: 1800 # Время жизни access token (в секундах)
-          JWT_REFRESH_TOKEN_EXPIRE: 5184000 # Время жизни refresh token (в секундах)
         run: |
-          uvicorn main:app --host 0.0.0.0 --port 8000 --app-dir ./autotests-api &
-          echo "Waiting for server to be ready..."
-          for i in $(seq 1 30); do
-            curl -s http://localhost:8000/docs > /dev/null && echo "Server is ready!" && break
-            echo "Attempt $i: server not ready yet, waiting..."
-            sleep 1
-          done
+          cd autotests-api
+          nohup uvicorn main:app --host 0.0.0.0 --port 8000 > /tmp/uvicorn.log 2>&1 &
+          echo "Server started with PID $!"
 
       # 6. Шаг для установки всех зависимостей проекта
       - name: Install dependencies
@@ -58,12 +55,28 @@ jobs:
           python -m pip install --upgrade pip  # Обновляем pip до последней версии
           pip install -r requirements.txt  # Устанавливаем зависимости, указанные в requirements.txt
 
-      # 7. Шаг для запуска тестов с использованием pytest и генерации отчётов Allure
+      # 7. Шаг ожидания готовности сервера
+      - name: Wait for server to be ready
+        run: |
+          echo "Waiting for server to be ready..."
+          for i in $(seq 1 30); do
+            if curl -s http://localhost:8000/api/v1/users > /dev/null 2>&1; then
+              echo "Server is ready!"
+              exit 0
+            fi
+            echo "Attempt $i: server not ready yet, waiting..."
+            sleep 1
+          done
+          echo "Server failed to start. Logs:"
+          cat /tmp/uvicorn.log
+          exit 1
+
+      # 8. Шаг для запуска тестов с использованием pytest и генерации отчётов Allure
       - name: Run API tests with pytest and generate Allure results
         run: |
           pytest -m regression --alluredir=allure-results --numprocesses 2 --ignore=autotests-api
 
-      # 8. Шаг для получения истории отчётов Allure, если она существует
+      # 9. Шаг для получения истории отчётов Allure, если она существует
       - name: Get Allure history
         uses: actions/checkout@v4  # Опять клонируем репозиторий, чтобы получить историю отчётов
         if: always()  # Всегда выполняем, независимо от успеха или неудачи предыдущих шагов
