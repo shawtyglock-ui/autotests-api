@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/exercises' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA0LTA2VDIyOjM1OjA4LjUxMjIwNSIsInVzZXJfaWQiOiI0NjBlYTVkYS0zZGVjLTRlNWQtYjFlMi0zZWU3OTU3NjA2YmQifQ.tXvNQ3mQPrYqQzvanaL3jr7T9X78AmexqS-r0Y91k0U' \
+  -H 'content-length: 343' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Later his feel teach.","courseId":"a54067b3-6121-428f-a425-8f7141ceba1c","maxScore":68,"minScore":27,"orderIndex":18,"description":"Treatment attention human risk newspaper. Character foot able difficult suffer have entire. Each push else writer send level available. First nature news ask history option.","estimatedTime":"2 weeks"}'

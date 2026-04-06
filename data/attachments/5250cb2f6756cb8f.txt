@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA0LTA2VDIyOjM1OjEwLjUyNDczMyIsInVzZXJfaWQiOiI0MTNhZTYyNS00YWUyLTRiY2UtOWNmMS0yYzk4N2VmZjg1MWEifQ.JstNaTPMtpawr3sLxMCYK8e9G-CHhq41Ahm9PgIz6V8' \
+  -H 'content-length: 371' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Indeed become member it total thing.","maxScore":68,"minScore":9,"description":"Listen relationship recognize product determine. Research suffer mean opportunity chance try whether growth. Policy campaign remain somebody.","estimatedTime":"1 weeks","previewFileId":"8c38b2dd-749a-43a0-9a25-4e342d2908fa","createdByUserId":"413ae625-4ae2-4bce-9cf1-2c987eff851a"}'

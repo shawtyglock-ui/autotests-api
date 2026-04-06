@@ -1,0 +1,11 @@
+curl -X 'PATCH' \
+  'http://localhost:8000/api/v1/courses/4eed6498-c20a-4bfa-b5a0-af5377d23ade' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA0LTA2VDIyOjM1OjA2LjIwNzMzMiIsInVzZXJfaWQiOiJhZWIwOTY1Yi1kOTlhLTRlYzctYTQyNi1jNmYwNDI2YTQ2MGYifQ.PvoCTr9IP_HU_wJE4oG0KZIWAcaIKzXgIzJN9miOxBA' \
+  -H 'content-length: 249' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Situation nothing particular suffer ground story seven.","maxScore":60,"minScore":30,"description":"Recent spend least almost life sound.\nSong decision eye parent eat father. Leave three very PM. Tax better it.","estimatedTime":"7 weeks"}'
