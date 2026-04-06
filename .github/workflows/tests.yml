@@ -67,11 +67,13 @@ jobs:
 
       # 9. Шаг для генерации и отображения отчёта Allure
       - name: Generates Allure Report with history
-        uses: simple-elf/allure-report-action@v1.9  # Используем готовое решение из GitHub Marketplace для генерации Allure отчёта
-        if: always()  # Этот шаг тоже всегда выполняется
-        with:
-          allure_results: allure-results  # Указываем каталог с результатами тестов
-          allure_history: allure-history  # Указываем каталог для истории отчётов Allure
+        if: always()
+        run: |
+          wget -qO allure.tgz https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
+          tar -zxf allure.tgz
+          sudo mv allure-2.27.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/local/bin/allure
+          allure generate allure-results --clean -o allure-history
 
       # 10. Шаг для деплоя отчёта Allure на GitHub Pages, чтобы его можно было просматривать в браузере
       - name: Deploy report to Github Pages
