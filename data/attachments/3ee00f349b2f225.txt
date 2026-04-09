@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA0LTA5VDE3OjU4OjU2LjMyNjMxNyIsInVzZXJfaWQiOiIyM2RmNDQxNy01YjE2LTQ0MDQtYWFmOC0zYmQ4MTAyY2Q0YzgifQ.Qy3Qa8s6ztaZ68VSyVbkfQErlo8TLtTrwPTPa-JI4qM' \
+  -H 'content-length: 401' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Month think wall.","maxScore":82,"minScore":23,"description":"Could small evidence. Sort way every bar prove. Set market factor American. Week be baby light mouth.\nFigure behind able color provide. Late weight rest benefit. Feel catch every high eye.","estimatedTime":"6 weeks","previewFileId":"c4e3b69f-9628-432a-b6ce-4210b29f8a61","createdByUserId":"23df4417-5b16-4404-aaf8-3bd8102cd4c8"}'

@@ -1,0 +1,11 @@
+curl -X 'PATCH' \
+  'http://localhost:8000/api/v1/exercises/1c4c7504-ed0a-4426-ac47-e98c1aa61ce0' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA0LTA5VDE3OjU4OjU4LjcxMTkwMyIsInVzZXJfaWQiOiIyYTY5MmYyNC1iY2JjLTQzYjUtYTE3My1kMjRjMDRjODBiNDMifQ.qH4VlMHE6bumN7GlG4ye6UByquPssNvLxKT1P2pHJ04' \
+  -H 'content-length: 352' \
+  -H 'content-type: application/json' \
+  -d '{"title":"No wide who happen do economy.","courseId":"02a33c9a-51bb-40f8-9659-ec601a9653d4","maxScore":81,"minScore":27,"orderIndex":63,"description":"Like several pattern small. Vote material remember place discuss join rather.\nSong ability event clearly consider practice leave. Finally air billion board list any nation.","estimatedTime":"8 weeks"}'
